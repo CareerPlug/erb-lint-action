@@ -66,7 +66,7 @@ fixed_comments = comments_made_by_erb_lint.reject do |comment|
   files_with_offenses.any? do |file|
     file.fetch("path") == comment.fetch("path") &&
       file.fetch("offenses").any? do |offense|
-        offense.fetch("location").fetch("line") == comment.fetch("line")
+        offense.fetch("location").fetch("start_line") == comment.fetch("line")
       end
   end
 end
